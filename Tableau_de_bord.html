@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP | BMJ.SERVICE</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Times New Roman", Times, serif;}
+
+/* BODY */
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f") no-repeat center fixed;
+    background-size:cover;
+    color:#fff;
+    position:relative;
+}
+body::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background: rgba(0,0,0,0.35);
+    z-index:0;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    background: linear-gradient(90deg,#0b3c5d,#145a86);
+    border-bottom:3px solid #c9a227;
+    position:relative;
+    z-index:1000;
+}
+
+/* LOGO */
+.logo{display:flex;flex-direction:column;gap:4px;}
+.logo-top{display:flex;align-items:center;gap:12px;}
+.logo-circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:2px solid #fff;
+    background:url("espoir-logo.png") center/cover no-repeat;
+}
+.site-name{font-size:24px;font-weight:bold;color:#fff;}
+.sub-name{
+    font-size:14px;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+.sub-name img{
+    width:35px;
+    border-radius:5px;
+}
+
+/* MENU */
+.menu-icon{font-size:26px;cursor:pointer;color:#fff;}
+.menu{
+    position:absolute;
+    top:70px;
+    right:8%;
+    background:#0b3c5d;
+    width:220px;
+    border-radius:6px;
+    display:none;
+    flex-direction:column;
+    z-index:2000;
+}
+.menu a{
+    padding:12px;
+    text-decoration:none;
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+.menu a:hover{background:#145a86;}
+
+/* VIP CONTAINER */
+.vip-container{
+    max-width:600px;
+    margin:80px auto;
+    padding:40px 30px;
+    border:2px solid #145a86;
+    border-radius:15px;
+    background: rgba(0,0,0,0.7);
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+.vip-container h2{
+    font-size:36px;
+    color:#00e5ff;
+    margin-bottom:20px;
+    text-shadow:1px 1px 5px #000;
+}
+.vip-container p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+.vip-btn{
+    background:#00e5ff;
+    color:#000;
+    font-weight:bold;
+    padding:15px 40px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    margin:15px 0;
+    text-decoration:none;
+}
+.vip-btn:hover{
+    background:#007bbf;
+    color:#fff;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer.socials{
+    text-align:center;
+    padding:20px 0;
+    margin-top:auto;
+    background: linear-gradient(90deg,#0b3c5d,#145a86);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+footer.socials a{
+    margin:0 10px;
+    font-size:28px;
+    color:#fff;
+    transition: transform 0.3s;
+}
+footer.socials a:hover{
+    transform:scale(1.2);
+    color:#c9a227;
+}
+.support{
+    margin-top:10px;
+    font-size:16px;
+    color:#00e5ff;
+}
+.support span{
+    display:block;
+    margin-bottom:5px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <div class="logo-top">
+            <div class="logo-circle" title="BMJ.SERVICE"></div>
+            <div class="site-name">BMJ.SERVICE</div>
+        </div>
+        <div class="sub-name">
+            YALI Network Partition
+            <img src="md-logo.png" alt="MD Logo" title="MD Logo">
+        </div>
+    </div>
+    <div class="menu-icon" id="menuToggle">☰</div>
+    <div class="menu" id="menu">
+        <a href="inscription.html">Inscription</a>
+        <a href="connexion.html">Connexion</a>
+        <a href="tableau_de_bord.html">Tableau de bord</a>
+    </div>
+</header>
+
+<div class="vip-container">
+    <h2>Espace VIP</h2>
+    <p>Bienvenue dans l’espace VIP de BMJ.SERVICE. Accédez à des contenus exclusifs, recevez votre certificat officiel YALI Network et suivez vos leçons en vidéo tout en bénéficiant d’avantages réservés aux membres VIP.</p>
+    
+    <a href="https://yali.state.gov/fr/" target="_blank" class="vip-btn">→ Leçons</a>
+    <a href="paiement.html" class="vip-btn">→ Suivi de leçon VIP en vidéo</a>
+</div>
+
+<footer class="socials">
+    <div>
+        <a href="https://wa.me/243993585711" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/greatman9609" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@bmjreussir" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://youtube.com/@justinmussiwa" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/posts/justin-mussiwa-167b8a331" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <div class="support">
+        <span>WhatsApp : 0993585711 | 0978713440</span>
+        <span>Email : Justinmussiwa@gmail.com</span>
+    </div>
+</footer>
+
+<script>
+// Menu toggle
+const menuToggle = document.getElementById("menuToggle");
+const menu = document.getElementById("menu");
+menuToggle.addEventListener("click", e=>{
+    e.stopPropagation();
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+});
+document.addEventListener("click", e=>{
+    if(!menu.contains(e.target) && !menuToggle.contains(e.target)){
+        menu.style.display="none";
+    }
+});
+</script>
+
+</body>
+</html>

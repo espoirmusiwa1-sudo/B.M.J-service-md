@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Connexion | BMJ.SERVICE</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Times New Roman", Times, serif;
+}
+
+/* BODY */
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f") no-repeat center fixed;
+    background-size:cover;
+    color:#fff;
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:0;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    background:linear-gradient(90deg,#0b3c5d,#145a86);
+    border-bottom:3px solid gold;
+    position:relative;
+    z-index:1000;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.logo-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:2px solid #fff;
+    background:url("espoir-logo.png") center/cover no-repeat;
+}
+
+.site-name{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.sub-name{
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.sub-name img{
+    width:35px;
+    border-radius:5px;
+}
+
+/* MENU */
+.menu-icon{
+    font-size:26px;
+    cursor:pointer;
+}
+
+.menu{
+    position:absolute;
+    top:70px;
+    right:8%;
+    background:#0b3c5d;
+    width:220px;
+    border-radius:6px;
+    display:none;
+    flex-direction:column;
+}
+
+.menu a{
+    padding:12px;
+    text-decoration:none;
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.menu a:hover{
+    background:#145a86;
+}
+
+/* FORM */
+.container{
+    max-width:450px;
+    margin:50px auto;
+    padding:30px;
+    background:rgba(0,0,0,0.7);
+    border:2px solid #145a86;
+    border-radius:15px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    position:relative;
+    z-index:2;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#00e5ff;
+}
+
+/* INPUT */
+.input-group{
+    position:relative;
+    margin-top:15px;
+}
+
+.input-group i{
+    position:absolute;
+    top:50%;
+    left:12px;
+    transform:translateY(-50%);
+    color:#00e5ff;
+}
+
+.input-group input{
+    width:100%;
+    padding:10px 10px 10px 40px;
+    border-radius:8px;
+    border:1px solid #00e5ff;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    margin-top:20px;
+    padding:12px;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    border-radius:10px;
+    background:#145a86;
+    color:#fff;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0b3c5d;
+}
+
+/* MESSAGE */
+.message{
+    margin-top:15px;
+    text-align:center;
+    font-weight:bold;
+}
+.error{color:red;}
+.success{color:lime;}
+
+/* REGISTER LINK */
+.register-prompt{
+    text-align:center;
+    margin-top:15px;
+    font-weight:bold;
+}
+.register-prompt a{
+    color:#00e5ff;
+    text-decoration:none;
+}
+.register-prompt a:hover{
+    text-decoration:underline;
+}
+
+/* FORGOT PASSWORD */
+.forgot-password{
+    text-align:center;
+    margin-top:10px;
+}
+.forgot-password a{
+    color:#00e5ff;
+    text-decoration:none;
+}
+.forgot-password a:hover{
+    text-decoration:underline;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:15px;
+    margin-top:auto;
+    background:linear-gradient(90deg,#0b3c5d,#145a86);
+}
+
+footer a{
+    margin:0 10px;
+    font-size:28px;
+    color:#fff;
+}
+
+footer a:hover{
+    color:gold;
+    transform:scale(1.2);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:768px){
+    .menu-icon{display:block;}
+    .container{margin:30px 15px;padding:25px;}
+    .logo-top{gap:8px;}
+    .site-name{font-size:20px;}
+    .sub-name{font-size:12px;}
+    .input-group input{padding:10px 10px 10px 35px;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="logo">
+    <div class="logo-top">
+        <div class="logo-circle" title="BMJ.SERVICE"></div>
+        <div class="site-name">BMJ.SERVICE</div>
+    </div>
+    <div class="sub-name">
+        YALI Network Partition
+        <img src="md-logo.png" alt="MD Logo">
+    </div>
+</div>
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+<div class="menu" id="menu">
+    <a href="inscription.html">Inscription</a>
+</div>
+</header>
+
+<!-- FORM -->
+<div class="container">
+<h2>Connexion</h2>
+<form id="loginForm">
+
+<div class="input-group">
+<i class="fas fa-envelope"></i>
+<input type="email" id="email" placeholder="Email" required>
+</div>
+
+<div class="input-group">
+<i class="fas fa-lock"></i>
+<input type="password" id="password" placeholder="Mot de passe" required>
+</div>
+
+<button type="submit">Se connecter</button>
+
+<div class="message" id="message"></div>
+</form>
+
+<div class="forgot-password">
+<a href="#" id="resetPassword">Mot de passe oublié ?</a>
+</div>
+
+<div class="register-prompt">
+Pas encore membre ? <a href="inscription.html">Inscription</a>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<a href="https://wa.me/243993585711"><i class="fab fa-whatsapp"></i></a>
+<a href="https://instagram.com/greatman9609"><i class="fab fa-instagram"></i></a>
+<a href="https://tiktok.com/@bmjreussir"><i class="fab fa-tiktok"></i></a>
+<a href="https://youtube.com/@justinmussiwa"><i class="fab fa-youtube"></i></a>
+</footer>
+
+<script>
+function toggleMenu(){
+    let menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display==="flex")?"none":"flex";
+}
+
+// LOGIN FORM
+const loginForm = document.getElementById("loginForm");
+const message = document.getElementById("message");
+
+loginForm.addEventListener("submit", e=>{
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find(u=>u.email===email);
+
+    if(!user){
+        message.textContent="Email inconnu.";
+        message.className="message error";
+        return;
+    }
+
+    if(user.password!==password){
+        message.textContent="Mot de passe incorrect.";
+        message.className="message error";
+        return;
+    }
+
+    // Connexion réussie
+    window.location.href="tableau_de_bord.html";
+});
+
+// RESET PASSWORD
+document.getElementById("resetPassword").addEventListener("click", e=>{
+    e.preventDefault();
+    const emailPrompt = prompt("Entrez votre email pour réinitialiser le mot de passe :");
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find(u=>u.email===emailPrompt);
+    if(!user){
+        alert("Email non trouvé, créez un compte.");
+        return;
+    }
+    const newPassword = prompt("Entrez votre nouveau mot de passe (min 8 caractères) :");
+    if(!newPassword || newPassword.length<8){
+        alert("Mot de passe invalide.");
+        return;
+    }
+    user.password = newPassword;
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Mot de passe réinitialisé avec succès !");
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inscription | BMJ.SERVICE</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Times New Roman", Times, serif;
+}
+
+/* BODY */
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f") no-repeat center fixed;
+    background-size:cover;
+    color:#fff;
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:0;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    background:linear-gradient(90deg,#0b3c5d,#145a86);
+    border-bottom:3px solid gold;
+    position:relative;
+    z-index:1000;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.logo-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:2px solid #fff;
+    background:url("espoir-logo.png") center/cover no-repeat;
+}
+
+.site-name{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.sub-name{
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.sub-name img{
+    width:35px;
+    border-radius:5px;
+}
+
+/* MENU */
+.menu-icon{
+    font-size:26px;
+    cursor:pointer;
+}
+
+.menu{
+    position:absolute;
+    top:70px;
+    right:8%;
+    background:#0b3c5d;
+    width:220px;
+    border-radius:6px;
+    display:none;
+    flex-direction:column;
+}
+
+.menu a{
+    padding:12px;
+    text-decoration:none;
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.menu a:hover{
+    background:#145a86;
+}
+
+/* FORM */
+.container{
+    max-width:450px;
+    margin:50px auto;
+    padding:30px;
+    background:rgba(0,0,0,0.7);
+    border:2px solid #145a86;
+    border-radius:15px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    position:relative;
+    z-index:2;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#00e5ff;
+}
+
+/* INPUT */
+.input-group{
+    position:relative;
+    margin-top:15px;
+}
+
+.input-group i{
+    position:absolute;
+    top:50%;
+    left:12px;
+    transform:translateY(-50%);
+    color:#00e5ff;
+}
+
+.input-group input,
+.input-group select{
+    width:100%;
+    padding:10px 10px 10px 40px;
+    border-radius:8px;
+    border:1px solid #00e5ff;
+}
+
+/* PHONE */
+.phone-group{
+    display:flex;
+    gap:10px;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    margin-top:20px;
+    padding:12px;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    border-radius:10px;
+    background:#145a86;
+    color:#fff;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0b3c5d;
+}
+
+/* MESSAGE */
+.message{
+    margin-top:15px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.error{color:red;}
+.success{color:lime;}
+
+/* LOGIN LINK */
+.login-prompt{
+    text-align:center;
+    margin-top:15px;
+}
+
+.login-prompt a{
+    color:#00e5ff;
+    text-decoration:none;
+}
+
+.login-prompt a:hover{
+    text-decoration:underline;
+}
+
+/* FOOTER */
+footer{
+    background:linear-gradient(90deg,#0b3c5d,#145a86);
+    padding:15px;
+    text-align:center;
+    margin-top:auto;
+}
+
+footer a{
+    margin:0 10px;
+    font-size:28px;
+    color:#fff;
+}
+
+footer a:hover{
+    color:gold;
+    transform:scale(1.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+<div class="logo">
+
+    <div class="logo-top">
+        <div class="logo-circle"></div>
+        <div class="site-name">BMJ.SERVICE</div>
+    </div>
+
+    <div class="sub-name">
+        YALI Network Partition
+        <img src="md-logo.png" alt="MD Logo">
+    </div>
+
+</div>
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+    <a href="connexion.html">Connexion</a>
+</div>
+
+</header>
+
+
+<!-- FORM -->
+<div class="container">
+
+<h2>Inscription</h2>
+
+<form id="registerForm">
+
+<div class="input-group">
+<i class="fas fa-user"></i>
+<input type="text" id="nom" placeholder="Nom complet" required>
+</div>
+
+<div class="input-group">
+<i class="fas fa-envelope"></i>
+<input type="email" id="email" placeholder="Email" required>
+</div>
+
+<div class="input-group">
+<i class="fas fa-calendar"></i>
+<input type="date" id="dob" required>
+</div>
+
+<div class="input-group">
+<i class="fas fa-phone"></i>
+<input type="tel" id="phone" placeholder="Numéro téléphone" required>
+</div>
+
+<div class="input-group">
+<i class="fas fa-lock"></i>
+<input type="password" id="password" placeholder="Mot de passe" required>
+</div>
+
+<div class="input-group">
+<i class="fas fa-lock"></i>
+<input type="password" id="confirmPassword" placeholder="Confirmer mot de passe" required>
+</div>
+
+<button type="submit">S'inscrire</button>
+
+<div class="message" id="message"></div>
+
+</form>
+
+<div class="login-prompt">
+Déjà membre ? <a href="connexion.html">Connexion</a>
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+
+<a href="https://wa.me/243993585711"><i class="fab fa-whatsapp"></i></a>
+<a href="https://instagram.com/greatman9609"><i class="fab fa-instagram"></i></a>
+<a href="https://tiktok.com/@bmjreussir"><i class="fab fa-tiktok"></i></a>
+<a href="https://youtube.com/@justinmussiwa"><i class="fab fa-youtube"></i></a>
+
+</footer>
+
+
+<script>
+
+/* MENU */
+function toggleMenu(){
+    let menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display==="flex")?"none":"flex";
+}
+
+/* FORM */
+const form = document.getElementById("registerForm");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", e=>{
+
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const pass = document.getElementById("password").value;
+    const confirm = document.getElementById("confirmPassword").value;
+
+    if(pass.length < 8){
+        message.textContent="Mot de passe minimum 8 caractères.";
+        message.className="message error";
+        return;
+    }
+
+    if(pass !== confirm){
+        message.textContent="Les mots de passe ne correspondent pas.";
+        message.className="message error";
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    if(users.find(u=>u.email===email)){
+        message.textContent="Compte déjà existant.";
+        message.className="message error";
+        return;
+    }
+
+    users.push({email:email,password:pass});
+    localStorage.setItem("users",JSON.stringify(users));
+
+    message.textContent="Inscription réussie !";
+    message.className="message success";
+
+    setTimeout(()=>{
+        window.location.href="connexion.html";
+    },1500);
+
+});
+
+</script>
+
+</body>
+</html>
